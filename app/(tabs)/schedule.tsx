@@ -2,7 +2,7 @@ import {View, Text} from "react-native";
 
 export default function Schedule() {
     return (
-        <View>
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
             <Text>Schedule page</Text>
         </View>
     )
