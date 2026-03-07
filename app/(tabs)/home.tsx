@@ -2,7 +2,7 @@ import HomePageTabs from "@/components/home-page-tabs";
 import {useEffect} from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
 import {SafeAreaProvider, SafeAreaView} from 'react-native-safe-area-context';
-import useGeneralStore, {type LessonState} from '@/store/generalStore';
+import useGeneralStore, {type LessonState, NotificationState} from '@/store/generalStore';
 import globalStyles from "@/styles/globalStyles";
 
 function initialFetch(): void {
@@ -38,12 +38,39 @@ function initialFetch(): void {
             classroom: 'A-114'
         }
     ]
+    const notifications: NotificationState[] = [
+        {
+            imageUrl: 'https://wallpapercat.com/w/full/3/7/0/2068046-1920x1080-desktop-1080p-demolition-movie-background-photo.jpg',
+            title: 'Новое сообщение!',
+            description: 'Ахмедия Е. Е.',
+            time: '11:20',
+        },
+        {
+            imageUrl: 'https://i.pinimg.com/originals/0e/6e/11/0e6e112ad264d42985cef412a78d07c5.jpg',
+            title: 'Новое сообщение!',
+            description: 'Амантай А. А.',
+            time: '12:20',
+        },
+        {
+            imageUrl: 'https://cdn.britannica.com/02/162002-050-02512608/Tupac-Shakur-1993.jpg',
+            title: 'Новое сообщение!',
+            description: 'Смагулов А. А.',
+            time: '13:20',
+        },
+        {
+            imageUrl: 'https://statico.profootballnetwork.com/wp-content/uploads/2026/02/09224943/what-eileen-gu-said-winning-02-10-26-1920x1280.jpg',
+            title: 'Новое сообщение!',
+            description: 'Гу А. Э.',
+            time: '14:20',
+        }
+    ]
 
-    const {setStudent, setGpa, setWeek, setLessons} = useGeneralStore.getState();
+    const {setStudent, setGpa, setWeek, setLessons, setNotifications} = useGeneralStore.getState();
     setStudent(student)
     setGpa(gpa)
     setWeek(week)
     setLessons(lessons)
+    setNotifications(notifications)
 }
 
 export default function Home() {

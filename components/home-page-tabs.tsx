@@ -6,6 +6,7 @@ import globalStyles from "@/styles/globalStyles";
 
 function MainRoute() {
     const lessons = useGeneralStore((state) => state.lessons);
+    const notifications = useGeneralStore((state) => state.notifications);
     return (
         <View>
             <Text>Сегодня</Text>
@@ -34,6 +35,27 @@ function MainRoute() {
                             <View style={{flexDirection: 'row', flex: 1}}>
                                 <Text>Аудитория</Text>
                                 <Text>{lesson.classroom}</Text>
+                            </View>
+                        </View>
+                    </View>
+                )}
+            />
+            <Text>Уведомления</Text>
+            <FlatList
+                data={notifications}
+                style={{ ...globalStyles.container, height: 200 }}
+                contentContainerStyle={{ paddingBottom: 20 }}
+                renderItem={({item: notification}) => (
+                    <View style={{ flexDirection: 'row', ...globalStyles.container, marginVertical: 5 }}>
+                        <Image
+                            source={{ uri: notification.imageUrl }}
+                            style={{ width: 30, height: 30, borderRadius: 50 }}
+                        />
+                        <View>
+                            <Text>{notification.title}</Text>
+                            <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                                <Text>{notification.description}</Text>
+                                <Text>{notification.time}</Text>
                             </View>
                         </View>
                     </View>

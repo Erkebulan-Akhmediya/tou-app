@@ -23,6 +23,13 @@ export type LessonState = {
     classroom: string,
 }
 
+export type NotificationState = {
+    title: string,
+    description: string,
+    imageUrl: string,
+    time: string,
+}
+
 export type GeneralState = {
     student: StudentState
     setStudent: (student: StudentState) => void,
@@ -32,6 +39,8 @@ export type GeneralState = {
     setWeek: (week: WeekState) => void,
     lessons: LessonState[],
     setLessons: (lessons: LessonState[]) => void,
+    notifications: NotificationState[],
+    setNotifications: (notifications: NotificationState[]) => void,
 }
 
 export default create<GeneralState>()((set) => ({
@@ -49,4 +58,6 @@ export default create<GeneralState>()((set) => ({
     setWeek: (week) => set(({week})),
     lessons: [],
     setLessons: (lessons) => set({lessons}),
+    notifications: [],
+    setNotifications: (notifications) => set({notifications}),
 }))
