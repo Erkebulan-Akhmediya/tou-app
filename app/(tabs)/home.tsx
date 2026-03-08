@@ -2,7 +2,7 @@ import HomePageTabs from "@/components/home-page-tabs";
 import {useEffect} from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
 import {SafeAreaProvider, SafeAreaView} from 'react-native-safe-area-context';
-import useGeneralStore, {type LessonState, NotificationState} from '@/store/generalStore';
+import useGeneralStore, {CourseState, type LessonState, NotificationState} from '@/store/generalStore';
 import globalStyles from "@/styles/globalStyles";
 
 function initialFetch(): void {
@@ -67,16 +67,27 @@ function initialFetch(): void {
     const announcementImageUrls = [
         'https://i.imgflip.com/73ezmf.jpg',
         'https://i.kym-cdn.com/entries/icons/original/000/052/449/bloxburg-news.jpg',
-        'https://i.kym-cdn.com/entries/icons/original/000/051/821/cover6.jpg'
+        'https://i.kym-cdn.com/entries/icons/original/000/051/821/cover6.jpg',
+        'https://i.kym-cdn.com/editorials/icons/original/000/014/592/kirkified-explained.jpg',
+        'https://i.kym-cdn.com/editorials/icons/original/000/009/155/druski_explainer.jpg'
     ]
+    const courses: CourseState[] = []
 
-    const {setStudent, setGpa, setWeek, setLessons, setNotifications, setAnnouncementImageUrls} = useGeneralStore.getState();
+    for (let i = 1; i <= 10; i++)
+        courses.push({
+            name: `Предмет ${i}`,
+            type: '',
+            faculty: '',
+        })
+
+    const {setStudent, setGpa, setWeek, setLessons, setNotifications, setAnnouncementImageUrls, setCourses} = useGeneralStore.getState();
     setStudent(student)
     setGpa(gpa)
     setWeek(week)
     setLessons(lessons)
     setNotifications(notifications)
     setAnnouncementImageUrls(announcementImageUrls)
+    setCourses(courses)
 }
 
 export default function Home() {

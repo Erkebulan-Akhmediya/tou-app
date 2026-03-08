@@ -30,6 +30,12 @@ export type NotificationState = {
     time: string,
 }
 
+export type CourseState = {
+    name: string,
+    type: string,
+    faculty: string,
+}
+
 export type GeneralState = {
     student: StudentState
     setStudent: (student: StudentState) => void,
@@ -43,6 +49,8 @@ export type GeneralState = {
     setNotifications: (notifications: NotificationState[]) => void,
     announcementImageUrls: string[],
     setAnnouncementImageUrls: (announcementImageUrls: string[]) => void,
+    courses: CourseState[],
+    setCourses: (courses: CourseState[]) => void,
 }
 
 export default create<GeneralState>()((set) => ({
@@ -64,4 +72,6 @@ export default create<GeneralState>()((set) => ({
     setNotifications: (notifications) => set({notifications}),
     announcementImageUrls: [],
     setAnnouncementImageUrls: (announcementImageUrls) => set({announcementImageUrls}),
+    courses: [],
+    setCourses: (courses) => set({courses}),
 }))

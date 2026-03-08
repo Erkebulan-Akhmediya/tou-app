@@ -1,6 +1,6 @@
 import {SceneMap, TabView} from "react-native-tab-view";
 import {useEffect, useState} from "react";
-import {FlatList, Image, Text, View, useWindowDimensions} from "react-native";
+import {FlatList, Image, Text, View} from "react-native";
 import useGeneralStore from '@/store/generalStore'
 import globalStyles from "@/styles/globalStyles";
 
@@ -10,11 +10,9 @@ function MainRoute() {
     const announcementImageUrls = useGeneralStore((state) => state.announcementImageUrls);
     const [announcementIndex, setAnnouncementIndex] = useState(0);
 
-    const {width: announcementWidth} = useWindowDimensions();
-
     useEffect(() => {
         setInterval(() => {
-            if (announcementIndex < announcementImageUrls.length-1)
+            if (announcementIndex < announcementImageUrls.length - 1)
                 setAnnouncementIndex(announcementIndex + 1);
             else
                 setAnnouncementIndex(0)
@@ -57,17 +55,17 @@ function MainRoute() {
             <Text>Уведомления</Text>
             <FlatList
                 data={notifications}
-                style={{ ...globalStyles.container, height: 200 }}
-                contentContainerStyle={{ paddingBottom: 20 }}
+                style={{...globalStyles.container, height: 200}}
+                contentContainerStyle={{paddingBottom: 20}}
                 renderItem={({item: notification}) => (
-                    <View style={{ flexDirection: 'row', ...globalStyles.container, marginVertical: 5 }}>
+                    <View style={{flexDirection: 'row', ...globalStyles.container, marginVertical: 5}}>
                         <Image
-                            source={{ uri: notification.imageUrl }}
-                            style={{ width: 30, height: 30, borderRadius: 50 }}
+                            source={{uri: notification.imageUrl}}
+                            style={{width: 30, height: 30, borderRadius: 50}}
                         />
                         <View>
                             <Text>{notification.title}</Text>
-                            <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                            <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
                                 <Text>{notification.description}</Text>
                                 <Text>{notification.time}</Text>
                             </View>
@@ -77,16 +75,28 @@ function MainRoute() {
             />
             <Text>Объявления</Text>
             <Image
-                source={{ uri: announcementImageUrls[announcementIndex] }}
-                style={{ width: announcementWidth, height: 200, borderRadius: 10 }}
+                source={{uri: announcementImageUrls[announcementIndex]}}
+                style={{width: '100%', height: 200, borderRadius: 10}}
             />
         </View>
     )
 }
 
 function CoursesRoute() {
+    const courses = useGeneralStore((state) => state.courses);
     return (
-        <Text>CoursesRoute</Text>
+        <View>
+            <Text>Курсы</Text>
+            <FlatList
+                data={courses}
+                numColumns={2}
+                renderItem={({item: course}) => (
+                    <View style={{...globalStyles.container, flex: 1}}>
+                        <Text>{course.name}</Text>
+                    </View>
+                )}
+            />
+        </View>
     )
 }
 
