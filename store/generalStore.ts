@@ -41,6 +41,8 @@ export type GeneralState = {
     setLessons: (lessons: LessonState[]) => void,
     notifications: NotificationState[],
     setNotifications: (notifications: NotificationState[]) => void,
+    announcementImageUrls: string[],
+    setAnnouncementImageUrls: (announcementImageUrls: string[]) => void,
 }
 
 export default create<GeneralState>()((set) => ({
@@ -60,4 +62,6 @@ export default create<GeneralState>()((set) => ({
     setLessons: (lessons) => set({lessons}),
     notifications: [],
     setNotifications: (notifications) => set({notifications}),
+    announcementImageUrls: [],
+    setAnnouncementImageUrls: (announcementImageUrls) => set({announcementImageUrls}),
 }))

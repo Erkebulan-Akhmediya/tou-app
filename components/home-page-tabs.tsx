@@ -1,12 +1,26 @@
 import {SceneMap, TabView} from "react-native-tab-view";
-import {useState} from "react";
-import {FlatList, Image, Text, View} from "react-native";
+import {useEffect, useState} from "react";
+import {FlatList, Image, Text, View, useWindowDimensions} from "react-native";
 import useGeneralStore from '@/store/generalStore'
 import globalStyles from "@/styles/globalStyles";
 
 function MainRoute() {
     const lessons = useGeneralStore((state) => state.lessons);
     const notifications = useGeneralStore((state) => state.notifications);
+    const announcementImageUrls = useGeneralStore((state) => state.announcementImageUrls);
+    const [announcementIndex, setAnnouncementIndex] = useState(0);
+
+    const {width: announcementWidth} = useWindowDimensions();
+
+    useEffect(() => {
+        setInterval(() => {
+            if (announcementIndex < announcementImageUrls.length-1)
+                setAnnouncementIndex(announcementIndex + 1);
+            else
+                setAnnouncementIndex(0)
+        }, 3000)
+    })
+
     return (
         <View>
             <Text>Сегодня</Text>
@@ -60,6 +74,11 @@ function MainRoute() {
                         </View>
                     </View>
                 )}
+            />
+            <Text>Объявления</Text>
+            <Image
+                source={{ uri: announcementImageUrls[announcementIndex] }}
+                style={{ width: announcementWidth, height: 200, borderRadius: 10 }}
             />
         </View>
     )

@@ -64,13 +64,19 @@ function initialFetch(): void {
             time: '14:20',
         }
     ]
+    const announcementImageUrls = [
+        'https://i.imgflip.com/73ezmf.jpg',
+        'https://i.kym-cdn.com/entries/icons/original/000/052/449/bloxburg-news.jpg',
+        'https://i.kym-cdn.com/entries/icons/original/000/051/821/cover6.jpg'
+    ]
 
-    const {setStudent, setGpa, setWeek, setLessons, setNotifications} = useGeneralStore.getState();
+    const {setStudent, setGpa, setWeek, setLessons, setNotifications, setAnnouncementImageUrls} = useGeneralStore.getState();
     setStudent(student)
     setGpa(gpa)
     setWeek(week)
     setLessons(lessons)
     setNotifications(notifications)
+    setAnnouncementImageUrls(announcementImageUrls)
 }
 
 export default function Home() {
