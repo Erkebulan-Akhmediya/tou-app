@@ -1,5 +1,6 @@
 // this file contains initial testing setup and should not be used in production
 import useGeneralStore, {CourseState, LessonState, NotificationState} from "@/store/generalStore";
+import useChatStore, {ConversationState} from "@/store/chatStore";
 
 export function initialFetch(): void {
     const student = {
@@ -67,8 +68,8 @@ export function initialFetch(): void {
         'https://i.kym-cdn.com/editorials/icons/original/000/014/592/kirkified-explained.jpg',
         'https://i.kym-cdn.com/editorials/icons/original/000/009/155/druski_explainer.jpg'
     ]
-    const courses: CourseState[] = []
 
+    const courses: CourseState[] = []
     for (let i = 1; i <= 10; i++)
         courses.push({
             name: `Предмет ${i}`,
@@ -76,7 +77,40 @@ export function initialFetch(): void {
             faculty: '',
         })
 
-    const {setStudent, setGpa, setWeek, setLessons, setNotifications, setAnnouncementImageUrls, setCourses} = useGeneralStore.getState();
+    const conversations: ConversationState[] = [
+        {
+            person: {
+                surname: 'Ахмедия',
+                name: 'Ерке',
+                middleName: 'Ерланұлы',
+                profilePictureUrl: 'https://wallpapercat.com/w/full/3/7/0/2068046-1920x1080-desktop-1080p-demolition-movie-background-photo.jpg'
+            },
+            messages: [
+                {
+                    text: 'Twin, where u at',
+                    time: new Date().toISOString()
+                },
+                {
+                    text: 'nigga',
+                    time: (() => {
+                        const date = new Date();
+                        date.setHours(date.getHours() - 1);
+                        return date.toISOString()
+                    })()
+                }
+            ]
+        }
+    ]
+
+    const {
+        setStudent,
+        setGpa,
+        setWeek,
+        setLessons,
+        setNotifications,
+        setAnnouncementImageUrls,
+        setCourses
+    } = useGeneralStore.getState();
     setStudent(student)
     setGpa(gpa)
     setWeek(week)
@@ -84,4 +118,6 @@ export function initialFetch(): void {
     setNotifications(notifications)
     setAnnouncementImageUrls(announcementImageUrls)
     setCourses(courses)
+    const {setConversations} = useChatStore.getState();
+    setConversations(conversations)
 }
