@@ -39,8 +39,6 @@ export type CourseState = {
 export type GeneralState = {
     student: StudentState
     setStudent: (student: StudentState) => void,
-    gpa: number,
-    setGpa: (gpa: number) => void,
     week: WeekState,
     setWeek: (week: WeekState) => void,
     lessons: LessonState[],
@@ -59,8 +57,6 @@ export default create<GeneralState>()((set) => ({
         profilePictureUrl: '',
     },
     setStudent: (student) => set({student}),
-    gpa: 0,
-    setGpa: (gpa) => set({gpa}),
     week: {
         number: 1,
         isNumerator: true,

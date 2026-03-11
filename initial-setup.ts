@@ -1,6 +1,7 @@
 // this file contains initial testing setup and should not be used in production
 import useGeneralStore, {CourseState, LessonState, NotificationState} from "@/store/generalStore";
 import useChatStore, {ConversationState} from "@/store/chatStore";
+import usePerformanceStore from "@/store/performanceStore";
 
 export function initialFetch(): void {
     const student = {
@@ -104,7 +105,6 @@ export function initialFetch(): void {
 
     const {
         setStudent,
-        setGpa,
         setWeek,
         setLessons,
         setNotifications,
@@ -112,7 +112,6 @@ export function initialFetch(): void {
         setCourses
     } = useGeneralStore.getState();
     setStudent(student)
-    setGpa(gpa)
     setWeek(week)
     setLessons(lessons)
     setNotifications(notifications)
@@ -120,4 +119,6 @@ export function initialFetch(): void {
     setCourses(courses)
     const {setConversations} = useChatStore.getState();
     setConversations(conversations)
+    const {setGpa} = usePerformanceStore.getState();
+    setGpa(gpa)
 }

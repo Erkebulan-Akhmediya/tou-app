@@ -3,13 +3,14 @@ import {useEffect} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {SafeAreaProvider, SafeAreaView} from 'react-native-safe-area-context';
 import useGeneralStore from '@/store/generalStore';
+import usePerformanceStore from '@/store/performanceStore';
 import globalStyles from "@/styles/globalStyles";
 import {initialFetch} from "@/initial-setup";
 import AppHeader from "@/components/app-header";
 
 export default function Home() {
     const student = useGeneralStore((state) => state.student);
-    const gpa = useGeneralStore((state) => state.gpa);
+    const gpa = usePerformanceStore((state) => state.gpa);
     const week = useGeneralStore((state) => state.week);
 
     useEffect(() => {
