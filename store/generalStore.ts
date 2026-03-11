@@ -1,7 +1,7 @@
 import {create} from 'zustand'
 
 export type PersonState = {
-    profilePictureUrl: string,
+    profilePictureUrl: string | null,
     surname: string,
     name: string,
     middleName: string,

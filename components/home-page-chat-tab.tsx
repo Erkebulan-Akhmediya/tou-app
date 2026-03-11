@@ -1,6 +1,7 @@
-import {FlatList, Image, Text, View} from "react-native";
+import {FlatList, Text, View} from "react-native";
 import useChatStore, {ConversationState} from '@/store/chatStore'
 import globalStyles from "@/styles/globalStyles";
+import OptionalProfileImage from "@/components/optional-profile-image";
 
 export default function MainPageChatTab() {
     const conversations: ConversationState[] = useChatStore((state) => state.conversations)
@@ -14,7 +15,7 @@ export default function MainPageChatTab() {
                 const msgDate = new Date().toLocaleDateString() === msgDateString ? 'Сегодня' : msgDateString
                 return (
                     <View style={{...globalStyles.container, flexDirection: 'row'}}>
-                        <Image
+                        <OptionalProfileImage
                             source={{uri: conversation.person.profilePictureUrl}}
                             style={{width: 50, height: 50, borderRadius: 50}}
                         />

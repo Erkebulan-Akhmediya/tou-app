@@ -6,6 +6,8 @@ import usePerformanceStore from "@/store/performanceStore";
 export function initialFetch(): void {
     const student = {
         name: 'Вонён',
+        surname: 'Джан',
+        middleName: '',
         profilePictureUrl: "https://i0.wp.com/bloganchoi.com/wp-content/uploads/2023/03/jang1wonyoung1.jpg",
     }
     const gpa = 3.6

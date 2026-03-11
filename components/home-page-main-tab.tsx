@@ -1,7 +1,8 @@
-import {FlatList, Image, Text, View} from "react-native";
+import {FlatList, Text, View, Image} from "react-native";
 import useGeneralStore from '@/store/generalStore'
 import globalStyles from "@/styles/globalStyles";
 import {useEffect, useState} from "react";
+import OptionalProfileImage from "@/components/optional-profile-image";
 
 export default function HomePageMainTab() {
     const lessons = useGeneralStore((state) => state.lessons);
@@ -28,7 +29,7 @@ export default function HomePageMainTab() {
                 renderItem={({item: lesson}) => (
                     <View style={{...globalStyles.container}}>
                         <View style={{flexDirection: 'row'}}>
-                            <Image
+                            <OptionalProfileImage
                                 source={{uri: lesson.teacher.profilePictureUrl}}
                                 style={{width: 20, height: 20, borderRadius: 50}}
                             />
@@ -58,7 +59,7 @@ export default function HomePageMainTab() {
                 contentContainerStyle={{paddingBottom: 20}}
                 renderItem={({item: notification}) => (
                     <View style={{flexDirection: 'row', ...globalStyles.container, marginVertical: 5}}>
-                        <Image
+                        <OptionalProfileImage
                             source={{uri: notification.imageUrl}}
                             style={{width: 30, height: 30, borderRadius: 50}}
                         />
