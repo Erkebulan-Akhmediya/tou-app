@@ -1,10 +1,11 @@
 import HomePageTabs from "@/components/home-page-tabs";
 import {useEffect} from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import {SafeAreaProvider, SafeAreaView} from 'react-native-safe-area-context';
 import useGeneralStore from '@/store/generalStore';
 import globalStyles from "@/styles/globalStyles";
 import {initialFetch} from "@/initial-setup";
+import AppHeader from "@/components/app-header";
 
 export default function Home() {
     const student = useGeneralStore((state) => state.student);
@@ -19,10 +20,7 @@ export default function Home() {
     return (
         <SafeAreaProvider>
             <SafeAreaView style={{flex: 1, flexDirection: 'column', padding: 20}}>
-                <Image
-                    source={{uri: student.profilePictureUrl}}
-                    style={{width: 50, height: 50, borderRadius: 50}}
-                />
+                <AppHeader />
                 <Text>Сәлем, {student.name}</Text>
                 <View
                     style={{...styles.generalInfoRow}}>
