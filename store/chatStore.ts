@@ -1,4 +1,5 @@
 import {create} from 'zustand'
+import {PersonState} from "@/store/generalStore";
 
 export type MessageState = {
     text: string,
@@ -6,12 +7,7 @@ export type MessageState = {
 }
 
 export type ConversationState = {
-    person: {
-        surname: string,
-        name: string,
-        middleName: string,
-        profilePictureUrl: string,
-    },
+    person: PersonState,
     messages: MessageState[],
 }
 

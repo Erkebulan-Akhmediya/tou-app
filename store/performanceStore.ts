@@ -1,4 +1,5 @@
 import {create} from 'zustand'
+import {PersonState} from "@/store/generalStore";
 
 export type PerformanceState = {
     gpa: number,
@@ -8,6 +9,10 @@ export type PerformanceState = {
 }
 
 export type GradeState = {
+    course: {
+        name: string,
+        teachers: PersonState[]
+    },
     ratings: RatingState[], // рейтинг 1 / рейтинг 2
     entranceRating: number, // рейтинг допуска
     exam: number, // экзамен

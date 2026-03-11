@@ -1,9 +1,13 @@
 import {create} from 'zustand'
 
-export type StudentState = {
+export type PersonState = {
+    profilePictureUrl: string,
+    surname: string,
     name: string,
-    profilePictureUrl: string
+    middleName: string,
 }
+
+export type StudentState = PersonState
 
 export type WeekState = {
     number: number,
@@ -11,12 +15,7 @@ export type WeekState = {
 }
 
 export type LessonState = {
-    teacher: {
-        profilePictureUrl: string,
-        surname: string,
-        name: string,
-        middleName: string,
-    },
+    teacher: PersonState,
     name: string,
     type: string,
     time: string,
@@ -53,7 +52,9 @@ export type GeneralState = {
 
 export default create<GeneralState>()((set) => ({
     student: {
+        surname: '',
         name: '',
+        middleName: '',
         profilePictureUrl: '',
     },
     setStudent: (student) => set({student}),
