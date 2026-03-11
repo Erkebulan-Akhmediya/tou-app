@@ -34,7 +34,7 @@ export default function HomePageMainTab() {
                                 style={{width: 20, height: 20, borderRadius: 50}}
                             />
                             <Text>
-                                {lesson.teacher.surname} {lesson.teacher.name[0]}. {lesson.teacher.middleName[0]}.
+                                {lesson.teacher.surname} {lesson.teacher.name[0]}. {lesson.teacher.middleName ? lesson.teacher.middleName[0] : ''}.
                             </Text>
                         </View>
                         <Text>{lesson.name}</Text>

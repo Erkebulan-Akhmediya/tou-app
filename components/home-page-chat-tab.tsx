@@ -20,7 +20,7 @@ export default function MainPageChatTab() {
                             style={{width: 50, height: 50, borderRadius: 50}}
                         />
                         <View style={{flex:1}}>
-                            <Text>{conversation.person.surname} {conversation.person.name[0]}. {conversation.person.middleName[0]}.</Text>
+                            <Text>{conversation.person.surname} {conversation.person.name[0]}. {conversation.person.middleName ? conversation.person.middleName[0] : ''}.</Text>
                             <Text>{msg.text}</Text>
                         </View>
                         <View>
