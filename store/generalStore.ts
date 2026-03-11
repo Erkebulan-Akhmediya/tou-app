@@ -4,7 +4,7 @@ export type PersonState = {
     profilePictureUrl: string | null,
     surname: string,
     name: string,
-    middleName: string,
+    middleName: string | null,
 }
 
 export type StudentState = PersonState

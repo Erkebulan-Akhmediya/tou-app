@@ -1,7 +1,7 @@
 // this file contains initial testing setup and should not be used in production
 import useGeneralStore, {CourseState, LessonState, NotificationState} from "@/store/generalStore";
 import useChatStore, {ConversationState} from "@/store/chatStore";
-import usePerformanceStore from "@/store/performanceStore";
+import usePerformanceStore, {GradeState} from "@/store/performanceStore";
 
 export function initialFetch(): void {
     const student = {
@@ -105,6 +105,55 @@ export function initialFetch(): void {
         }
     ]
 
+    const grades: GradeState[] = [
+        {
+            course: {
+                name: 'Тренировка силы',
+                teachers: [
+                    {
+                        surname: 'Химеджима',
+                        name: 'Гёмей',
+                        middleName: null,
+                        profilePictureUrl: null
+                    }
+                ]
+            },
+            ratings: [
+                {
+                    practices: [90, 90, 90, 90, 90, 90, 90, 90],
+                    currents: {
+                        current: 90,
+                        milestone: 90
+                    },
+                    fromStatement: {
+                        current: 90,
+                        milestone: 90
+                    },
+                    total: 90
+                },
+                {
+                    practices: [90, 90, 90, 90, 90, 90, 90],
+                    currents: {
+                        current: 90,
+                        milestone: 90
+                    },
+                    fromStatement: {
+                        current: 90,
+                        milestone: 90
+                    },
+                    total: 90
+                }
+            ],
+            entranceRating: 90,
+            exam: 100,
+            courseWork: {
+                fromStatement: 0,
+                fromJournal: 0
+            },
+            finalGrade: 95
+        }
+    ]
+
     const {
         setStudent,
         setWeek,
@@ -121,6 +170,7 @@ export function initialFetch(): void {
     setCourses(courses)
     const {setConversations} = useChatStore.getState();
     setConversations(conversations)
-    const {setGpa} = usePerformanceStore.getState();
+    const {setGpa, setGrades} = usePerformanceStore.getState();
     setGpa(gpa)
+    setGrades(grades)
 }
