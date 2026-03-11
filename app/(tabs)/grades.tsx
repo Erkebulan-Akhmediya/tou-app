@@ -1,9 +1,15 @@
-import {Text, View} from "react-native";
+import {Text} from "react-native";
+import {SafeAreaProvider, SafeAreaView} from "react-native-safe-area-context";
+import globalStyles from "@/styles/globalStyles";
+import AppHeader from "@/components/app-header";
 
 export default function Grades() {
     return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-            <Text>Grades page</Text>
-        </View>
+        <SafeAreaProvider>
+            <SafeAreaView style={{...globalStyles.safeAreaView}}>
+                <AppHeader />
+                <Text>Оценки</Text>
+            </SafeAreaView>
+        </SafeAreaProvider>
     )
 }

@@ -19,7 +19,7 @@ export default function Home() {
 
     return (
         <SafeAreaProvider>
-            <SafeAreaView style={{flex: 1, flexDirection: 'column', padding: 20}}>
+            <SafeAreaView style={{...globalStyles.safeAreaView}}>
                 <AppHeader />
                 <Text>Сәлем, {student.name}</Text>
                 <View

@@ -6,6 +6,11 @@ const globalStyles = StyleSheet.create({
         borderRadius: 20,
         padding: 10
     },
+    safeAreaView: {
+        flex: 1,
+        flexDirection: 'column',
+        padding: 20
+    }
 })
 
 export default globalStyles;
