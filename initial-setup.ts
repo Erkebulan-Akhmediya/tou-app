@@ -9,6 +9,7 @@ export function initialFetch(): void {
         surname: 'Джан',
         middleName: '',
         profilePictureUrl: "https://i0.wp.com/bloganchoi.com/wp-content/uploads/2023/03/jang1wonyoung1.jpg",
+        group: 'МИС-12н'
     }
     const gpa = 3.6
     const week = {number: 3, isNumerator: true}

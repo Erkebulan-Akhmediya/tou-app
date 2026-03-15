@@ -4,9 +4,11 @@ import globalStyles from "@/styles/globalStyles";
 import OptionalProfileImage from "@/components/optional-profile-image";
 import useGeneralStore, {StudentState} from '@/store/generalStore'
 import {Button} from "react-native-paper";
+import {useRouter} from "expo-router";
 
 export default function Profile() {
     const student: StudentState = useGeneralStore(state => state.student)
+    const router = useRouter();
     return (
         <SafeAreaProvider>
             <SafeAreaView style={{...globalStyles.safeAreaView}}>
@@ -20,10 +22,10 @@ export default function Profile() {
                     <Text>Группа</Text>
                     <Text>{student.group}</Text>
                 </View>
-                <Button onPress={() => {}}>Настройки профиля</Button>
-                <Button onPress={() => {}}>Личные данные</Button>
-                <Button onPress={() => {}}>Приложение</Button>
-                <Button onPress={() => {}}>Выход</Button>
+                <Button onPress={() => router.push('/profile/settings')}>Настройки профиля</Button>
+                <Button onPress={() => router.push('/profile/personal-data') }>Личные данные</Button>
+                <Button onPress={() => router.push('/profile/app')}>Приложение</Button>
+                <Button onPress={() => router.navigate('/login')}>Выход</Button>
             </SafeAreaView>
         </SafeAreaProvider>
     )
