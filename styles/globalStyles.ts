@@ -10,6 +10,9 @@ const globalStyles = StyleSheet.create({
         flex: 1,
         flexDirection: 'column',
         padding: 20
+    },
+    bg: {
+        backgroundColor: '#06182F',
     }
 })
 

@@ -7,6 +7,7 @@ export default function TabsLayout() {
             <Tabs.Screen
                 name="schedule"
                 options={{
+                    title: 'Расписание',
                     headerShown: false,
                     tabBarIcon: ({color, size}) =>
                         <CalendarCheck color={color} size={size}/>
@@ -15,6 +16,7 @@ export default function TabsLayout() {
             <Tabs.Screen
                 name="grades"
                 options={{
+                    title: 'Оценки',
                     headerShown: false,
                     tabBarIcon: ({color, size}) =>
                         <GraduationCap color={color} size={size} />
@@ -23,6 +25,7 @@ export default function TabsLayout() {
             <Tabs.Screen
                 name="home"
                 options={{
+                    title: 'Главная',
                     headerShown: false,
                     tabBarIcon: ({color, size}) =>
                         <Menu color={color} size={size} />
@@ -31,6 +34,7 @@ export default function TabsLayout() {
             <Tabs.Screen
                 name="materials"
                 options={{
+                    title: 'Материалы',
                     headerShown: false,
                     tabBarIcon: ({color, size}) =>
                         <BookMarked color={color} size={size} />
@@ -39,6 +43,7 @@ export default function TabsLayout() {
             <Tabs.Screen
                 name="profile"
                 options={{
+                    title: 'Профиль',
                     headerShown: false,
                     tabBarIcon: ({color, size}) =>
                         <User color={color} size={size} />
