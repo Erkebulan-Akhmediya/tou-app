@@ -1,15 +1,15 @@
-import {View} from "react-native";
+import {ScrollView} from "react-native";
 import HomePageMainTabLessons from "@/components/home-page-main-tab-lessons";
 import HomePageMainTabNotifications from "@/components/home-page-main-tab-notifications";
 import HomePageMainTabAnnouncements from "@/components/home-page-main-tab-announcements";
 
 export default function HomePageMainTab() {
     return (
-        <View>
-            <HomePageMainTabLessons />
-            <HomePageMainTabNotifications />
-            <HomePageMainTabAnnouncements />
-        </View>
+        <ScrollView>
+            <HomePageMainTabLessons/>
+            <HomePageMainTabNotifications/>
+            <HomePageMainTabAnnouncements/>
+        </ScrollView>
     )
 }
 

@@ -21,17 +21,16 @@ export default function Home() {
     return (
         <SafeAreaProvider>
             <SafeAreaView style={{...globalStyles.safeAreaView}}>
-                <AppHeader />
-                <Text style={[globalStyles.text, { fontSize: 30 }]}>Сәлем, {student.name}</Text>
-                <View
-                    style={{...styles.generalInfoRow}}>
-                    <View style={{...globalStyles.darkContainer, flex: 1}}>
-                        <Text style={[globalStyles.text]}>Мой GPA</Text>
-                        <Text style={[globalStyles.text]}>{gpa}</Text>
+                <AppHeader/>
+                <Text style={[globalStyles.text, {fontSize: 30}]}>Сәлем, {student.name}</Text>
+                <View style={{...styles.generalInfoRow, marginTop: 15, marginBottom: 20}}>
+                    <View style={[globalStyles.darkContainer, {flex: 1, padding: 15}]}>
+                        <Text style={[globalStyles.text, {fontSize: 15}]}>Мой GPA</Text>
+                        <Text style={[globalStyles.text, {fontSize: 30}]}>{gpa}</Text>
                     </View>
-                    <View style={{...globalStyles.darkContainer, flex: 1}}>
-                        <Text style={[globalStyles.text]}>Неделя №{week.number}</Text>
-                        <Text style={[globalStyles.text]}>{week.isNumerator ? 'Числитель' : 'Знаменатель'}</Text>
+                    <View style={{...globalStyles.darkContainer, flex: 1, padding: 15, justifyContent: 'space-between' }}>
+                        <Text style={[globalStyles.text, {fontSize: 15}]}>Неделя №{week.number}</Text>
+                        <Text style={[globalStyles.text, {fontSize: 15}]}>{week.isNumerator ? 'Числитель' : 'Знаменатель'}</Text>
                     </View>
                 </View>
                 <HomePageTabs/>

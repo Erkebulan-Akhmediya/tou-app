@@ -1,4 +1,4 @@
-import {SceneMap, TabView} from "react-native-tab-view";
+import {SceneMap, TabBar, TabView} from "react-native-tab-view";
 import {useState} from "react";
 import HomePageMainTab from "@/components/home-page-main-tab";
 import HomePageCoursesTab from "@/components/home-page-courses-tab";
@@ -21,6 +21,14 @@ export default function HomePageTabs() {
             onIndexChange={setIndex}
             navigationState={{index, routes}}
             renderScene={renderScene}
+            renderTabBar={props => (
+                <TabBar
+                    style={{backgroundColor: 'transparent'}}
+                    indicatorStyle={{backgroundColor: 'white'}}
+                    inactiveColor='#FFFFFF99'
+                    {...props}
+                />
+            )}
         ></TabView>
     )
 }

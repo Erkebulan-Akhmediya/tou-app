@@ -6,7 +6,7 @@ export default function AppHeader() {
     return (
         <OptionalProfileImage
             source={{uri: student.profilePictureUrl}}
-            style={{width: 50, height: 50, borderRadius: 50}}
+            style={{width: 50, height: 50, borderRadius: 50, marginBottom: 20}}
         />
     )
 }
