@@ -20,12 +20,14 @@ export default function MainPageChatTab() {
                             style={{width: 50, height: 50, borderRadius: 50}}
                         />
                         <View style={{flex:1}}>
-                            <Text>{conversation.person.surname} {conversation.person.name[0]}. {conversation.person.middleName ? conversation.person.middleName[0] : ''}.</Text>
-                            <Text>{msg.text}</Text>
+                            <Text style={[globalStyles.text]}>
+                                {conversation.person.surname} {conversation.person.name[0]}. {conversation.person.middleName ? conversation.person.middleName[0] : ''}.
+                            </Text>
+                            <Text style={[globalStyles.text]}>{msg.text}</Text>
                         </View>
                         <View>
-                            <Text>{msgDate}</Text>
-                            <Text>{msgDateTime.toLocaleTimeString()}</Text>
+                            <Text style={[globalStyles.text]}>{msgDate}</Text>
+                            <Text style={[globalStyles.text]}>{msgDateTime.toLocaleTimeString()}</Text>
                         </View>
                     </View>
                 )

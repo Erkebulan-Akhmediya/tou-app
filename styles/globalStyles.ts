@@ -1,5 +1,9 @@
 import {StyleSheet} from 'react-native';
 
+export const colors = {
+    bg: '#06182F'
+}
+
 const globalStyles = StyleSheet.create({
     container: {
         borderWidth: 1,
@@ -9,10 +13,21 @@ const globalStyles = StyleSheet.create({
     safeAreaView: {
         flex: 1,
         flexDirection: 'column',
-        padding: 20
-    },
-    bg: {
+        padding: 20,
         backgroundColor: '#06182F',
+    },
+    text: {
+        color: '#fff',
+    },
+    darkContainer: {
+        borderRadius: 20,
+        padding: 10,
+        backgroundColor: '#304661BD'
+    },
+    lightContainer: {
+        borderRadius: 20,
+        padding: 10,
+        backgroundColor: '#FFFFFF33'
     }
 })
 

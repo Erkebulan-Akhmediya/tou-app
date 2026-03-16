@@ -22,16 +22,16 @@ export default function Home() {
         <SafeAreaProvider>
             <SafeAreaView style={{...globalStyles.safeAreaView}}>
                 <AppHeader />
-                <Text>Сәлем, {student.name}</Text>
+                <Text style={[globalStyles.text, { fontSize: 30 }]}>Сәлем, {student.name}</Text>
                 <View
                     style={{...styles.generalInfoRow}}>
-                    <View style={{...globalStyles.container, flex: 1}}>
-                        <Text>Мой GPA</Text>
-                        <Text>{gpa}</Text>
+                    <View style={{...globalStyles.darkContainer, flex: 1}}>
+                        <Text style={[globalStyles.text]}>Мой GPA</Text>
+                        <Text style={[globalStyles.text]}>{gpa}</Text>
                     </View>
-                    <View style={{...globalStyles.container, flex: 1}}>
-                        <Text>Неделя №{week.number}</Text>
-                        <Text>{week.isNumerator ? 'Числитель' : 'Знаменатель'}</Text>
+                    <View style={{...globalStyles.darkContainer, flex: 1}}>
+                        <Text style={[globalStyles.text]}>Неделя №{week.number}</Text>
+                        <Text style={[globalStyles.text]}>{week.isNumerator ? 'Числитель' : 'Знаменатель'}</Text>
                     </View>
                 </View>
                 <HomePageTabs/>

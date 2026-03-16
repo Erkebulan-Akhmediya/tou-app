@@ -6,13 +6,13 @@ export default function HomePageCoursesTab() {
     const courses = useGeneralStore((state) => state.courses);
     return (
         <View>
-            <Text>Курсы</Text>
+            <Text style={[globalStyles.text]}>Курсы</Text>
             <FlatList
                 data={courses}
                 numColumns={2}
                 renderItem={({item: course}) => (
                     <View style={{...globalStyles.container, flex: 1}}>
-                        <Text>{course.name}</Text>
+                        <Text style={[globalStyles.text]}>{course.name}</Text>
                     </View>
                 )}
             />

@@ -11,8 +11,8 @@ export default function Login() {
     const router = useRouter();
     return (
         <SafeAreaProvider>
-            <SafeAreaView style={{...globalStyles.safeAreaView, justifyContent: 'center', ...globalStyles.bg}}>
-                <Text style={loginStyles.topText}>
+            <SafeAreaView style={{...globalStyles.safeAreaView, justifyContent: 'center'}}>
+                <Text style={[loginStyles.topText, globalStyles.text]}>
                     Вход в личный кабинет
                 </Text>
                 <LoginTextInput
@@ -72,7 +72,6 @@ const loginStyles = StyleSheet.create({
         borderRadius: 50,
     },
     topText: {
-        color: '#fff',
         textAlign: 'center',
         fontSize: 30,
         width: 300,
