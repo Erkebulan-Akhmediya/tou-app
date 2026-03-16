@@ -13,26 +13,37 @@ export default function HomePageMainTabLessons() {
                 data={lessons}
                 contentContainerStyle={{gap: 10}}
                 renderItem={({item: lesson}) => (
-                    <View style={{...globalStyles.darkContainer}}>
-                        <View style={[{flexDirection: 'row'}, globalStyles.lightContainer]}>
-                            <OptionalProfileImage
-                                source={{uri: lesson.teacher.profilePictureUrl}}
-                                style={{width: 20, height: 20, borderRadius: 50}}
-                            />
-                            <Text style={[globalStyles.text]}>
-                                {lesson.teacher.surname} {lesson.teacher.name[0]}. {lesson.teacher.middleName ? lesson.teacher.middleName[0] : ''}.
-                            </Text>
+                    <View style={[globalStyles.darkContainer, {justifyContent: 'space-between', width: 220, height: 120}]}>
+                        <View>
+                            <View style={[
+                                {flexDirection: 'row', alignItems: 'center', justifyContent: 'space-evenly', width: '70%'},
+                                globalStyles.lightContainer
+                            ]}>
+                                <OptionalProfileImage
+                                    source={{uri: lesson.teacher.profilePictureUrl}}
+                                    style={{width: 17, height: 17, borderRadius: 50}}
+                                />
+                                <Text style={[globalStyles.text, {fontSize: 12}]}>
+                                    {lesson.teacher.surname} {lesson.teacher.name[0]}. {lesson.teacher.middleName ? lesson.teacher.middleName[0] : ''}.
+                                </Text>
+                            </View>
+                            <Text style={[globalStyles.text, {fontSize: 20}]}>{lesson.name}</Text>
+                            <Text style={[globalStyles.text, {fontSize: 12}]}>{lesson.type}</Text>
                         </View>
-                        <Text style={[globalStyles.text]}>{lesson.name}</Text>
-                        <Text style={[globalStyles.text]}>{lesson.type}</Text>
                         <View style={{flexDirection: 'row', flexWrap: 'wrap', gap: 15}}>
                             <View style={{flexDirection: 'row', flex: 1}}>
-                                <Text style={[globalStyles.text]}>Время</Text>
-                                <Text style={[globalStyles.text]}>{lesson.time}</Text>
+                                <Text style={[globalStyles.text, {fontSize: 10, marginRight: 7}]}>Время</Text>
+                                <Text
+                                    style={[globalStyles.text, {fontSize: 10, fontWeight: 'bold'}]}
+                                >
+                                    {lesson.time}
+                                </Text>
                             </View>
                             <View style={{flexDirection: 'row', flex: 1}}>
-                                <Text style={[globalStyles.text]}>Аудитория</Text>
-                                <Text style={[globalStyles.text]}>{lesson.classroom}</Text>
+                                <Text style={[globalStyles.text, {fontSize: 10, marginRight: 7}]}>Аудитория</Text>
+                                <Text style={[globalStyles.text, {fontSize: 10, fontWeight: 'bold'}]}>
+                                    {lesson.classroom}
+                                </Text>
                             </View>
                         </View>
                     </View>

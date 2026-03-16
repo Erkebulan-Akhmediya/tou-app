@@ -26,7 +26,7 @@ const globalStyles = StyleSheet.create({
     },
     lightContainer: {
         borderRadius: 20,
-        padding: 10,
+        padding: 5,
         backgroundColor: '#FFFFFF33'
     }
 })
