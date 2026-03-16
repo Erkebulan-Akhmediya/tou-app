@@ -2,13 +2,13 @@ import {FlatList, Text, View} from "react-native";
 import useGeneralStore from '@/store/generalStore'
 import globalStyles from "@/styles/globalStyles";
 import OptionalProfileImage from "@/components/optional-profile-image";
-import homePageMainTabStyles from "@/styles/homePageMainTabStyles";
+import homePageTabStyles from "@/styles/homePageTabStyles";
 
 export default function HomePageMainTabLessons() {
     const lessons = useGeneralStore((state) => state.lessons);
     return (
         <>
-            <Text style={[globalStyles.text, homePageMainTabStyles.bigText]}>Сегодня</Text>
+            <Text style={[globalStyles.text, homePageTabStyles.bigText]}>Сегодня</Text>
             <FlatList
                 horizontal
                 data={lessons}

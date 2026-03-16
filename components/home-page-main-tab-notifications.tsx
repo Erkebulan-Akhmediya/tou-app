@@ -2,13 +2,13 @@ import {Text, View} from "react-native";
 import globalStyles from "@/styles/globalStyles";
 import OptionalProfileImage from "@/components/optional-profile-image";
 import useGeneralStore from "@/store/generalStore";
-import homePageMainTabStyles from "@/styles/homePageMainTabStyles";
+import homePageTabStyles from "@/styles/homePageTabStyles";
 
 export default function HomePageMainTabNotifications() {
     const notifications = useGeneralStore((state) => state.notifications);
     return (
         <>
-            <Text style={[globalStyles.text, homePageMainTabStyles.bigText]}>Уведомления</Text>
+            <Text style={[globalStyles.text, homePageTabStyles.bigText]}>Уведомления</Text>
             <View style={[globalStyles.darkContainer, {height: 200, paddingBottom: 20}]}>
                 {notifications.slice(0, 3) .map((notification, index) => (
                     <View key={index} style={{flexDirection: 'row', ...globalStyles.lightContainer, marginVertical: 5}}>
