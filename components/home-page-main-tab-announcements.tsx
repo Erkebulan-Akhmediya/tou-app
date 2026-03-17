@@ -2,7 +2,6 @@ import {Image, Text} from "react-native";
 import globalStyles from "@/styles/globalStyles";
 import useGeneralStore from "@/store/generalStore";
 import {useEffect, useState} from "react";
-import homePageTabStyles from "@/styles/homePageTabStyles";
 
 export default function HomePageMainTabAnnouncements() {
     const announcementImageUrls = useGeneralStore((state) => state.announcementImageUrls);
@@ -18,7 +17,7 @@ export default function HomePageMainTabAnnouncements() {
     })
     return (
         <>
-            <Text style={[globalStyles.text, homePageTabStyles.bigText]}>Объявления</Text>
+            <Text style={[globalStyles.text, globalStyles.titleText]}>Объявления</Text>
             <Image
                 source={{uri: announcementImageUrls[announcementIndex]}}
                 style={{width: '100%', height: 200, borderRadius: 10}}

@@ -1,5 +1,5 @@
 import {Tabs} from "expo-router";
-import {CalendarCheck, GraduationCap, Menu, User} from "lucide-react-native";
+import {GraduationCap, Menu, User} from "lucide-react-native";
 import {colors} from '@/styles/globalStyles'
 
 export default function TabsLayout() {
@@ -12,15 +12,6 @@ export default function TabsLayout() {
             tabBarActiveTintColor: colors.text,
             tabBarActiveBackgroundColor: colors.lightContainer,
         }}>
-            <Tabs.Screen
-                name="schedule"
-                options={{
-                    title: 'Расписание',
-                    headerShown: false,
-                    tabBarIcon: ({color, size}) =>
-                        <CalendarCheck color={color} size={size}/>
-                }}
-            />
             <Tabs.Screen
                 name="grades"
                 options={{

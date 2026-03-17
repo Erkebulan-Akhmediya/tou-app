@@ -33,6 +33,10 @@ const globalStyles = StyleSheet.create({
         borderRadius: 20,
         padding: 5,
         backgroundColor: colors.lightContainer
+    },
+    titleText: {
+        fontSize: 25,
+        marginVertical: 20
     }
 })
 

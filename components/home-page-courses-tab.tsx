@@ -1,13 +1,12 @@
 import useGeneralStore from '@/store/generalStore'
 import globalStyles from "@/styles/globalStyles";
 import {FlatList, Text, View} from "react-native";
-import homePageTabStyles from "@/styles/homePageTabStyles";
 
 export default function HomePageCoursesTab() {
     const courses = useGeneralStore((state) => state.courses);
     return (
         <View>
-            <Text style={[globalStyles.text, homePageTabStyles.bigText]}>Курсы</Text>
+            <Text style={[globalStyles.text, globalStyles.titleText]}>Курсы</Text>
             <FlatList
                 data={courses}
                 numColumns={2}
