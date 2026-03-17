@@ -14,18 +14,18 @@ export default function MainPageChatTab() {
                 const msgDateString = msgDateTime.toLocaleDateString()
                 const msgDate = new Date().toLocaleDateString() === msgDateString ? 'Сегодня' : msgDateString
                 return (
-                    <View style={{...globalStyles.container, flexDirection: 'row'}}>
+                    <View style={{...globalStyles.darkContainer, flexDirection: 'row', marginVertical: 10}}>
                         <OptionalProfileImage
                             source={{uri: conversation.person.profilePictureUrl}}
-                            style={{width: 50, height: 50, borderRadius: 50}}
+                            style={{width: 55, height: 55, borderRadius: 50}}
                         />
-                        <View style={{flex:1}}>
-                            <Text style={[globalStyles.text]}>
+                        <View style={{flex:1, justifyContent: 'space-between', margin: 5}}>
+                            <Text style={[globalStyles.text, {fontSize: 20}]}>
                                 {conversation.person.surname} {conversation.person.name[0]}. {conversation.person.middleName ? conversation.person.middleName[0] : ''}.
                             </Text>
                             <Text style={[globalStyles.text]}>{msg.text}</Text>
                         </View>
-                        <View>
+                        <View style={{justifyContent: 'space-between', margin: 5}}>
                             <Text style={[globalStyles.text]}>{msgDate}</Text>
                             <Text style={[globalStyles.text]}>{msgDateTime.toLocaleTimeString()}</Text>
                         </View>
