@@ -17,8 +17,7 @@ const globalStyles = StyleSheet.create({
     safeAreaView: {
         flex: 1,
         flexDirection: 'column',
-        paddingLeft: 20,
-        paddingRight: 20,
+        padding: 20,
         backgroundColor: colors.bg,
     },
     text: {

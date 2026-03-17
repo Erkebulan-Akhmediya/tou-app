@@ -6,7 +6,7 @@ import usePerformanceStore, {GradeState} from "@/store/performanceStore";
 export function initialFetch(): void {
     const student = {
         name: 'Вонён',
-        surname: 'Джан',
+        surname: 'Чан',
         middleName: '',
         profilePictureUrl: "https://i0.wp.com/bloganchoi.com/wp-content/uploads/2023/03/jang1wonyoung1.jpg",
         group: 'МИС-12н'
