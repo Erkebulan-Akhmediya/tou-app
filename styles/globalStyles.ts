@@ -1,7 +1,11 @@
 import {StyleSheet} from 'react-native';
 
 export const colors = {
-    bg: '#06182F'
+    bg: '#06182F',
+    darkContainer: '#304661BD',
+    lightContainer: '#FFFFFF33',
+    text: '#fff',
+    tabBar: '#304661'
 }
 
 const globalStyles = StyleSheet.create({
@@ -13,21 +17,22 @@ const globalStyles = StyleSheet.create({
     safeAreaView: {
         flex: 1,
         flexDirection: 'column',
-        padding: 20,
-        backgroundColor: '#06182F',
+        paddingLeft: 20,
+        paddingRight: 20,
+        backgroundColor: colors.bg,
     },
     text: {
-        color: '#fff',
+        color: colors.text,
     },
     darkContainer: {
         borderRadius: 20,
         padding: 10,
-        backgroundColor: '#304661BD'
+        backgroundColor: colors.darkContainer,
     },
     lightContainer: {
         borderRadius: 20,
         padding: 5,
-        backgroundColor: '#FFFFFF33'
+        backgroundColor: colors.lightContainer
     }
 })
 
