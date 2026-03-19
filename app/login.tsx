@@ -1,9 +1,10 @@
 import {Text, StyleSheet} from "react-native";
 import React from "react";
-import {TextInput, Button} from "react-native-paper";
+import {Button} from "react-native-paper";
 import {useRouter} from "expo-router";
 import {SafeAreaProvider, SafeAreaView} from "react-native-safe-area-context";
 import globalStyles from "@/styles/globalStyles";
+import LoginTextInput from "@/components/login-text-input";
 
 export default function Login() {
     const [login, setLogin] = React.useState('');
@@ -44,33 +45,7 @@ export default function Login() {
     )
 }
 
-type LoginTextInputProps = {
-    value: string,
-    onChangeText: (text: string) => void,
-    label: string
-}
-
-function LoginTextInput({value, onChangeText, label}: LoginTextInputProps) {
-    return (
-        <TextInput
-            value={value}
-            onChangeText={onChangeText}
-            mode="outlined"
-            label={<Text style={{fontSize: 25}}>{label}</Text>}
-            outlineStyle={{
-                borderRadius: 50,
-            }}
-            style={{marginBottom: 20}}
-            contentStyle={{fontSize: 20}}
-            activeOutlineColor='transparent'
-        />
-    )
-}
-
 const loginStyles = StyleSheet.create({
-    textInputOutline: {
-        borderRadius: 50,
-    },
     topText: {
         textAlign: 'center',
         fontSize: 30,
