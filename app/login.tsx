@@ -13,7 +13,7 @@ async function login(): Promise<void> {
         setLoading(true);
         const url = `/auth/login`
         const payload = {username, password}
-        const {data: token} = await axios.post(url, payload);
+        const {data: {token}} = await axios.post(url, payload);
         axios.defaults.headers.common.Authorization = `Bearer ${token}`
         setToken(token);
         router.navigate('/home');

@@ -18,6 +18,16 @@ async function getStudent() {
     }
 }
 
+async function getWeek() {
+    const {setWeek} = useGeneralStore.getState();
+    try {
+        const {data} = await axios.get('/schedule/week');
+        setWeek(data);
+    } catch (e) {
+        console.error(e);
+    }
+}
+
 export default function Home() {
     const student = useGeneralStore((state) => state.student);
     const week = useGeneralStore((state) => state.week);
@@ -26,6 +36,7 @@ export default function Home() {
         // WARN: this initial fetch is for testing purposes and should be removed in production
         initialFetch();
         getStudent();
+        getWeek();
     }, [])
 
     return (
