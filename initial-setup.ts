@@ -11,6 +11,13 @@ export function initialFetch(): void {
         profilePictureUrl: "https://i0.wp.com/bloganchoi.com/wp-content/uploads/2023/03/jang1wonyoung1.jpg",
         group: 'МИС-12н'
     }
+    // const student = {
+    //     name: 'Абдулла',
+    //     surname: 'Айтқазы',
+    //     middleName: '',
+    //     profilePictureUrl: 'https://static01.nyt.com/athletic/uploads/wp/2025/12/08164325/GettyImages-2245401890-1-1024x683.jpg?width=1248&quality=70&auto=webp',
+    //     group: 'МИС-12н'
+    // }
     const gpa = 3.6
     const week = {number: 3, isNumerator: true}
     const lessons: LessonState[] = [
