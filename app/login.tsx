@@ -11,9 +11,10 @@ async function login(): Promise<void> {
     const {setLoading, username, password, setToken} = useLoginStore.getState()
     try {
         setLoading(true);
-        const url = `${process.env.EXPO_PUBLIC_BACKEND_URL}/auth/login`
+        const url = `/auth/login`
         const payload = {username, password}
         const {data: token} = await axios.post(url, payload);
+        axios.defaults.headers.common.Authorization = `Bearer ${token}`
         setToken(token);
         router.navigate('/home');
     } catch (e) {

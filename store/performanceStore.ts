@@ -2,8 +2,6 @@ import {create} from 'zustand'
 import {PersonState} from "@/store/generalStore";
 
 export type PerformanceState = {
-    gpa: number,
-    setGpa: (gpa: number) => void,
     grades: GradeState[],
     setGrades: (grades: GradeState[]) => void,
 }
@@ -37,8 +35,6 @@ export type RatingState = {
 }
 
 export default create<PerformanceState>()((set) => ({
-    gpa: 0,
-    setGpa: (gpa) => set({gpa}),
     grades: [],
     setGrades: (grades) => set({grades}),
 }))

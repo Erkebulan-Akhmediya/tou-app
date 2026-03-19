@@ -3,19 +3,29 @@ import {useEffect} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {SafeAreaProvider, SafeAreaView} from 'react-native-safe-area-context';
 import useGeneralStore from '@/store/generalStore';
-import usePerformanceStore from '@/store/performanceStore';
 import globalStyles from "@/styles/globalStyles";
 import {initialFetch} from "@/initial-setup";
 import AppHeader from "@/components/app-header";
+import axios from "axios";
+
+async function getStudent() {
+    const {setStudent} = useGeneralStore.getState();
+    try {
+        const {data: student} = await axios.get('/student')
+        setStudent(student)
+    } catch (e) {
+        console.error(e);
+    }
+}
 
 export default function Home() {
     const student = useGeneralStore((state) => state.student);
-    const gpa = usePerformanceStore((state) => state.gpa);
     const week = useGeneralStore((state) => state.week);
 
     useEffect(() => {
         // WARN: this initial fetch is for testing purposes and should be removed in production
         initialFetch();
+        getStudent();
     }, [])
 
     return (
@@ -26,7 +36,7 @@ export default function Home() {
                 <View style={{...styles.generalInfoRow, marginTop: 15, marginBottom: 20}}>
                     <View style={[globalStyles.darkContainer, {flex: 1, padding: 15}]}>
                         <Text style={[globalStyles.text, {fontSize: 15}]}>Мой GPA</Text>
-                        <Text style={[globalStyles.text, {fontSize: 30}]}>{gpa}</Text>
+                        <Text style={[globalStyles.text, {fontSize: 30}]}>{student.gpa}</Text>
                     </View>
                     <View style={{...globalStyles.darkContainer, flex: 1, padding: 15, justifyContent: 'space-between' }}>
                         <Text style={[globalStyles.text, {fontSize: 15}]}>Неделя №{week.number}</Text>

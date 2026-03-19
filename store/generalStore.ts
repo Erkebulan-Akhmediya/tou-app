@@ -8,7 +8,8 @@ export type PersonState = {
 }
 
 export type StudentState = PersonState & {
-    group: string
+    group: string,
+    gpa: number,
 }
 
 export type WeekState = {
@@ -58,7 +59,8 @@ export default create<GeneralState>()((set) => ({
         name: '',
         middleName: '',
         profilePictureUrl: '',
-        group: ''
+        group: '',
+        gpa: 0,
     },
     setStudent: (student) => set({student}),
     week: {

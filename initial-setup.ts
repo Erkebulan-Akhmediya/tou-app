@@ -4,13 +4,14 @@ import useChatStore, {ConversationState} from "@/store/chatStore";
 import usePerformanceStore, {GradeState} from "@/store/performanceStore";
 
 export function initialFetch(): void {
-    const student = {
-        name: 'Вонён',
-        surname: 'Чан',
-        middleName: '',
-        profilePictureUrl: "https://i0.wp.com/bloganchoi.com/wp-content/uploads/2023/03/jang1wonyoung1.jpg",
-        group: 'МИС-12н'
-    }
+    // const student = {
+    //     name: 'Вонён',
+    //     surname: 'Чан',
+    //     middleName: '',
+    //     profilePictureUrl: "https://i0.wp.com/bloganchoi.com/wp-content/uploads/2023/03/jang1wonyoung1.jpg",
+    //     group: 'МИС-12н',
+    //     gpa: 3.6,
+    // }
     // const student = {
     //     name: 'Абдулла',
     //     surname: 'Айтқазы',
@@ -18,7 +19,6 @@ export function initialFetch(): void {
     //     profilePictureUrl: 'https://static01.nyt.com/athletic/uploads/wp/2025/12/08164325/GettyImages-2245401890-1-1024x683.jpg?width=1248&quality=70&auto=webp',
     //     group: 'МИС-12н'
     // }
-    const gpa = 3.6
     const week = {number: 3, isNumerator: true}
     const lessons: LessonState[] = [
         {
@@ -163,14 +163,14 @@ export function initialFetch(): void {
     ]
 
     const {
-        setStudent,
+        // setStudent,
         setWeek,
         setLessons,
         setNotifications,
         setAnnouncementImageUrls,
         setCourses
     } = useGeneralStore.getState();
-    setStudent(student)
+    // setStudent(student)
     setWeek(week)
     setLessons(lessons)
     setNotifications(notifications)
@@ -178,7 +178,6 @@ export function initialFetch(): void {
     setCourses(courses)
     const {setConversations} = useChatStore.getState();
     setConversations(conversations)
-    const {setGpa, setGrades} = usePerformanceStore.getState();
-    setGpa(gpa)
+    const {setGrades} = usePerformanceStore.getState();
     setGrades(grades)
 }
