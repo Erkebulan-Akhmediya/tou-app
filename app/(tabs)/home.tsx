@@ -12,6 +12,7 @@ async function getStudent() {
     const {setStudent} = useGeneralStore.getState();
     try {
         const {data: student} = await axios.get('/student')
+        console.log('student', student);
         setStudent(student)
     } catch (e) {
         console.error(e);

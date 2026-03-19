@@ -1,5 +1,5 @@
 // this file contains initial testing setup and should not be used in production
-import useGeneralStore, {CourseState, LessonState, NotificationState} from "@/store/generalStore";
+import useGeneralStore, {CourseState, NotificationState} from "@/store/generalStore";
 import useChatStore, {ConversationState} from "@/store/chatStore";
 import usePerformanceStore, {GradeState} from "@/store/performanceStore";
 
@@ -19,33 +19,33 @@ export function initialFetch(): void {
     //     profilePictureUrl: 'https://static01.nyt.com/athletic/uploads/wp/2025/12/08164325/GettyImages-2245401890-1-1024x683.jpg?width=1248&quality=70&auto=webp',
     //     group: 'МИС-12н'
     // }
-    const week = {number: 3, isNumerator: true}
-    const lessons: LessonState[] = [
-        {
-            teacher: {
-                profilePictureUrl: 'https://wallpapercat.com/w/full/3/7/0/2068046-1920x1080-desktop-1080p-demolition-movie-background-photo.jpg',
-                surname: 'Ахмедия',
-                name: 'Еркебұлан',
-                middleName: 'Ерланұлы'
-            },
-            name: 'System Design',
-            type: 'Лекция',
-            time: '14:20',
-            classroom: 'A-113'
-        },
-        {
-            teacher: {
-                profilePictureUrl: 'https://cdn.britannica.com/02/162002-050-02512608/Tupac-Shakur-1993.jpg',
-                surname: 'Смагулов',
-                name: 'Асланбек',
-                middleName: 'А'
-            },
-            name: 'DBMS',
-            type: 'Практика',
-            time: '15:10',
-            classroom: 'A-114'
-        }
-    ]
+    // const week = {number: 3, isNumerator: true}
+    // const lessons: LessonState[] = [
+    //     {
+    //         teacher: {
+    //             profilePictureUrl: 'https://wallpapercat.com/w/full/3/7/0/2068046-1920x1080-desktop-1080p-demolition-movie-background-photo.jpg',
+    //             surname: 'Ахмедия',
+    //             name: 'Еркебұлан',
+    //             middleName: 'Ерланұлы'
+    //         },
+    //         name: 'System Design',
+    //         type: 'Лекция',
+    //         time: '14:20',
+    //         classroom: 'A-113'
+    //     },
+    //     {
+    //         teacher: {
+    //             profilePictureUrl: 'https://cdn.britannica.com/02/162002-050-02512608/Tupac-Shakur-1993.jpg',
+    //             surname: 'Смагулов',
+    //             name: 'Асланбек',
+    //             middleName: 'А'
+    //         },
+    //         name: 'DBMS',
+    //         type: 'Практика',
+    //         time: '15:10',
+    //         classroom: 'A-114'
+    //     }
+    // ]
     const notifications: NotificationState[] = [
         {
             imageUrl: 'https://wallpapercat.com/w/full/3/7/0/2068046-1920x1080-desktop-1080p-demolition-movie-background-photo.jpg',
@@ -164,15 +164,15 @@ export function initialFetch(): void {
 
     const {
         // setStudent,
-        setWeek,
-        setLessons,
+        // setWeek,
+        // setLessons,
         setNotifications,
         setAnnouncementImageUrls,
         setCourses
     } = useGeneralStore.getState();
     // setStudent(student)
-    setWeek(week)
-    setLessons(lessons)
+    // setWeek(week)
+    // setLessons(lessons)
     setNotifications(notifications)
     setAnnouncementImageUrls(announcementImageUrls)
     setCourses(courses)
